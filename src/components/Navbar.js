@@ -1,3 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CartWidget from './CartWidget'
+
+
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light barra_nav">
@@ -24,6 +28,7 @@ const Navbar = () => {
                 </li>
                 </ul>
             </div>
+            <CartWidget />
         </nav>
     );
 }
