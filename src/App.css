@@ -1,5 +1,21 @@
 .boton_carrito{
   border: none;
+  background-color: transparent;
+}
+
+.numero_carrito{
+  position: relative;
+  top: -30px;
+  left: 90%;
+  background: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2px;
 }
 
 .App {
