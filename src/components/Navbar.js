@@ -8,7 +8,7 @@ const NavBar = () => {
         <>
         <Navbar bg="light" variant="light">
             <Container>
-            <Navbar.Brand href="#home">Pañalera JyP</Navbar.Brand>
+            <Navbar.Brand href="#home">Vivero la Florida</Navbar.Brand>
             <Nav className="me-auto">
             <Nav.Link href="#home">Inicio</Nav.Link>
             <Nav.Link href="#features">Productos</Nav.Link>
