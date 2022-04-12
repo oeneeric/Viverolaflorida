@@ -18,6 +18,13 @@
   padding: 2px;
 }
 
+.card_description{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .App {
   text-align: center;
 }

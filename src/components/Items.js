@@ -1,12 +1,20 @@
-import products from "./products";
-const Items = ({ id, name, price, image }) => {
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Button } from 'react-bootstrap';
+
+const Items = ({ name, price, description, image }) => {
 
     return (
-        <div key={id}>
-            <img src={image} alt="" className="card__img" />
-            <h2>{name}</h2>
-            <h3>$ {price}</h3>
-        </div>
+        <>
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={image} />
+                <Card.Body className="card_description">
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Text>{description}</Card.Text>
+                    <Card.Text>$ {price}</Card.Text>
+                    <Button variant="primary">Ver producto</Button>
+                </Card.Body>
+            </Card>
+        </>
     )
 }
 
