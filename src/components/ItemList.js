@@ -6,7 +6,7 @@ const ItemList = ({ items }) => {
         <div className="row">
             {
                 items.length > 0
-                ? items.map((item) => <Items key={item.id} id={item.id} name={item.name} price={item.price} description={item.description} image={item.image} />)
+                ? items.map((items) => <Items key={items.id} id={items.id} name={items.name} price={items.price} description={items.description} image={items.image} />)
                 : <p>Cargando productos...</p>
             }
         </div>

@@ -18,10 +18,24 @@
   padding: 2px;
 }
 
+.fondo_body{
+  background-color: rgb(232, 255, 230);
+}
+
 .card_description{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
+}
+
+.tamaño_img{
+  width: 500px;
+}
+
+.body{
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
