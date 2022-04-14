@@ -1,16 +1,16 @@
-import products from "./products"
+// import products from "./products"
 
 let is_ok = true;
 
-const customFetch = () => {
+const customFetch = (time, task) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
            if (is_ok) {
-               resolve(products);
+               resolve(task);
             } else {
-                reject("No se cargaron los productos");
+                reject("Error customFetch");
             }
-        },1000);
+        },time);
     });
 }
 

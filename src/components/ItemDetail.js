@@ -1,22 +1,28 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemCount from './ItemCount';
 import { Card } from 'react-bootstrap';
 
-const ItemDetail = ({ items }) => {
-    console.log(items)
+const ItemDetail = ({ item }) => {
+
+    const onAdd = (qty) => {
+        alert("You have selected " + qty + " items.");
+    }
+
     return (
         <>
         {
-        items
+        item && item.image
         ?
         <Card className="tamaño_img">
-            <Card.Img variant="top" src="https://t2.uc.ltmcdn.com/es/posts/0/3/0/cuales_son_las_propiedades_del_romero_17030_paso_2_600.jpg" />
+            <Card.Img variant="top" src={item.image} />
             <Card.Body>
-                <Card.Title>Romero</Card.Title>
-                <Card.Text>Planta aromática</Card.Text>
-                <Card.Text>$ 200</Card.Text>
+                <Card.Title>{item.name}</Card.Title>
+                <Card.Text>{item.description}</Card.Text>
+                <Card.Text>${item.price}</Card.Text>
             </Card.Body>
+            <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
         </Card>
-        : <p>cargando...</p>
+        : <p>Cargando...</p>
         }
         </>
     )

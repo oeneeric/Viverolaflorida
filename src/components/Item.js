@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Items = ({ name, price, description, image }) => {
+const Item = ({ id, name, price, description, image }) => {
 
     return (
         <>
@@ -11,11 +12,11 @@ const Items = ({ name, price, description, image }) => {
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>{description}</Card.Text>
                     <Card.Text>$ {price}</Card.Text>
-                    <Button variant="primary">Ver producto</Button>
+                    <Link to={`/item/${id}`}><Button variant="primary">Ver producto</Button></Link>
                 </Card.Body>
             </Card>
         </>
     )
 }
 
-export default Items;
+export default Item;

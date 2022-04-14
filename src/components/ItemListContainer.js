@@ -1,27 +1,35 @@
-// import { useEffect, useState } from 'react';
-// import ItemCount from './ItemCount';
-// import ItemList from './ItemList';
-// import customFetch from "./customFetch";
-// import products from "./products";
-// // const { products } = require('./products');
+import { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+import ItemList from './ItemList';
+import customFetch from "./customFetch";
+import products from "./products";
+// const { products } = require('./products');
 
-// const ItemListContainer = ({greeting}) => {
-//     const [data, setData] = useState ([]);
+const ItemListContainer = () => {
+    const [data, setData] = useState ([]);
+    const { idCategory } = useParams(); // HOOK
 
-//     useEffect (() =>{
-//         customFetch (1000, products)
-//             .then(result => setData (result))
-//             .catch(err => console.log(err))
-//     }, []);
+    console.log(idCategory, "idCategory");
+    
+    useEffect (() =>{
+        customFetch (1000, products.filter(item => {
+            if (idCategory === undefined) return item;
+            return item.categoryId === parseInt(idCategory)
+        }))
+            .then(result => setData (result))
+            .catch(err => console.log(err))
+    }, [idCategory]);
+
+    // const onAdd = (qty) => {
+    //     alert("You have selected " + qty + " items.")
+    // }
     
 
-//     return (
-//         <div className="fondo_body">
-//         <h1>{greeting}</h1>
-//         <ItemList items={data} />
-//         <ItemCount />
-//         </div>
-//     );
-// }
+    return (
+        <div className="fondo_body">
+            <ItemList items={data} />
+        </div>
+    );
+}
 
-// export default ItemListContainer;
+export default ItemListContainer;

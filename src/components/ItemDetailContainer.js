@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import customFetch from "./customFetch";
 import ItemDetail from "./ItemDetail";
-import ItemCount from './ItemCount';
 import products from "./products";
+
 
 const ItemDetailContainer = () => {
     const [data, setData] = useState ({});
+    const { idItem } = useParams();
 
     useEffect(() => {
-        customFetch(1500, products[0])
+        customFetch(1000, products.find(item => item.id === parseInt(idItem)))
             // .then(result => console.log("promesa", result))
             .then(result => setData(result))
             .catch(err => console.log(err))
-    },[]);
+    },[idItem]);
 
     return (
         <div className="body">
-        <ItemDetail items={data} />
-        <ItemCount />
+        <ItemDetail item={data} />
         </div>
     );
 }
