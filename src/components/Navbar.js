@@ -11,7 +11,7 @@ const NavBar = () => {
                 <Link to="/"><Navbar.Brand>Vivero la Florida</Navbar.Brand></Link>
                 <Nav className="me-auto">
                     <Nav.Link href="/category/1">Aromáticas</Nav.Link>
-                    <Nav.Link href="/category/2">Categoría 2</Nav.Link>
+                    <Nav.Link href="/category/2">Sustratos</Nav.Link>
                     <Nav.Link href="/category/3">Categoría 3</Nav.Link>
                     <Nav.Link href="/category/4">Categoría 4</Nav.Link>
                 </Nav>

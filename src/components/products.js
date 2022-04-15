@@ -8,7 +8,7 @@ const products = [
         categoryId: 1,
         category: {
             name: "Aromáticas",
-            id: 1
+            id: 1,
         },
     },
     {
@@ -20,7 +20,7 @@ const products = [
         categoryId: 1,
         category: {
             name: "Aromáticas",
-            id: 1
+            id: 1,
         },
     },
     {
@@ -56,9 +56,35 @@ const products = [
         categoryId: 1,
         category: {
             name: "Aromáticas",
-            id: 1
+            id: 1,
         },
-    }
+    },
+    {
+        id: 6,
+        name: "Tierra para jardín",
+        price: 150,
+        description: "Tierra elaborada a base de compost",
+        image: "https://www.terrafertil.com/imagenes/productos/jardin_enmiendas/tierra_fertil_grande.jpg",
+        categoryId: 2,
+        category: {
+            name: "Sustratos",
+            id: 2,
+        },
+    },
+    {
+        id: 7,
+        name: "Compost orgánico",
+        price: 300,
+        description: "Sustrato poroso",
+        image: "https://terrafertil.com/imagenes/productos/sustratos/acond/mejores_tft/compost_grande.jpg",
+        categoryId: 2,
+        category: {
+            name: "Sustratos",
+            id: 2,
+        },
+    },
+
+    
 ];
 
 export default products;
