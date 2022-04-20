@@ -1,11 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 import ItemCount from './ItemCount';
-import { Card } from 'react-bootstrap';
+import Checkout from './Checkout';
+import { Card, } from 'react-bootstrap';
 
 const ItemDetail = ({ item }) => {
+    const [itemCount, setItemCount] = useState(0);
 
     const onAdd = (qty) => {
-        alert("You have selected " + qty + " items.");
+        alert("Seleccionaste " + qty + " items.");
+        setItemCount(qty);
     }
 
     return (
@@ -20,7 +24,11 @@ const ItemDetail = ({ item }) => {
                 <Card.Text>{item.description}</Card.Text>
                 <Card.Text>${item.price}</Card.Text>
             </Card.Body>
-            <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+            {
+                itemCount === 0
+                ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
+                : <Checkout />
+            }
         </Card>
         : <p>Cargando...</p>
         }

@@ -20,11 +20,7 @@ const ItemListContainer = () => {
             .catch(err => console.log(err))
     }, [idCategory]);
 
-    // const onAdd = (qty) => {
-    //     alert("You have selected " + qty + " items.")
-    // }
     
-
     return (
         <div className="fondo_body">
             <ItemList items={data} />

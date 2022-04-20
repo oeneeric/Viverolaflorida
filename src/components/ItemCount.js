@@ -1,27 +1,23 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 
-const ItemCount = () =>{
-    const[count, setCount] = useState(1);
+const ItemCount = ({ stock = 0, initial = 0, onAdd }) =>{
+    const [count, setCount] = useState(0);
 
-    const increment = () =>{
-        if (count < 5) {
-            setCount(count+1);    
+    // useEffect(() =>{
+    //     setCount();
+    // },[]);
+
+    const increment = () => {
+        if (count < stock) {
+            setCount(count + 1);    
         }
-        
     }
 
-    const decrement = () =>{
-        if (count > 1) {
-            setCount(count-1)
-            
+    const decrement = () => {
+        if (count > initial) {
+            setCount(count - 1);            
         }  
-    }
-
-    const addToCart = () =>{
-        if (count >= 1) {
-            alert("Se agrego al carrito")        
-        }
     }
 
     return(
@@ -29,7 +25,11 @@ const ItemCount = () =>{
             <Button onClick={increment}>+</Button>
             <Button onClick={decrement}>-</Button>
             <p>{count}</p>
-            <Button onClick={addToCart} className="btnAddToCart">ADD TO CART</Button>
+            {
+                stock && count
+                ? <Button variant="primary" color="primary" onClick={() => onAdd(count)}>Add to Cart</Button>
+                : <Button variant="primary" disabled>Add to Cart</Button>
+            }
         </div> 
     );
 }
