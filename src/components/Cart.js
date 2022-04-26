@@ -3,6 +3,7 @@ import { useContext } from 'react';
 
 const Cart = () =>{
     const test = useContext(CartContext);
+    console.log(test.cartList)
     
     return(
         <>

@@ -8,8 +8,6 @@ import products from "./products";
 const ItemListContainer = () => {
     const [data, setData] = useState ([]);
     const { idCategory } = useParams(); // HOOK
-
-    console.log(idCategory, "idCategory");
     
     useEffect (() =>{
         customFetch (1000, products.filter(item => {

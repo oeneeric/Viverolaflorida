@@ -2,7 +2,7 @@ import { createContext, useState } from 'react';
 
 export const CartContext = createContext();
 
-const CartContextProvider = ({children}) => {
+const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const addItem = (item, qty) => {
@@ -19,7 +19,7 @@ const CartContextProvider = ({children}) => {
                 }
             ]);
         } else {
-            found.qty += qty;
+            found.qtyItem += qty;
         }
     }
 
