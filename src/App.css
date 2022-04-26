@@ -18,6 +18,18 @@
   padding: 2px;
 }
 
+.carrito_formato{
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid;
+  height: 200px;
+  align-items: center;
+}
+
+.carrito_img{
+  width: 150px;
+}
+
 .fondo_body{
   background-color: rgb(232, 255, 230);
 }
