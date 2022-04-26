@@ -16,11 +16,11 @@ const CartContextProvider = ({ children }) => {
                     nameItem: item.name,
                     priceItem: item.price,
                     qtyItem: qty
-                }
+                }  
             ]);
         } else {
             found.qtyItem += qty;
-        }
+        } console.log(qty) 
     }
 
     const removeItem = (id) => {
