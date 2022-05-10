@@ -1,14 +1,19 @@
 import { CartContext } from './CartContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
-const Cart = () =>{
+const Cart = () => {
     const test = useContext(CartContext);
-    console.log(test.cartList)
     
     return(
         <>
         <h2>CARRITO</h2>
-        <button onClick={test.clear}>Vaciar carrito</button>
+        <Link to='/'><button>Seguir comprando</button></Link>
+        {
+        (test.cartList.lengt > 0) 
+        ? <button onClick={test.clear}>Vaciar carrito</button>
+        : <p>Tu carrito está vacío!</p>
+        }
         {
             test.cartList.length > 0 && (
                 <>
@@ -19,14 +24,28 @@ const Cart = () =>{
                                 <h3>Producto: {item.nameItem}</h3>
                                 <p>{item.qtyItem} items</p>
                                 <p>$ {item.priceItem}</p>
+                                <p>$ {test.calcTotalPerItem(item.idItem)}</p>
                                 <button onClick={() => test.removeItem(item.idItem)}>Eliminar producto</button>
                             </div>
                         )
                     }
                 </>
-                
             )
         }
+        <div>
+            {
+                test.cartList.length > 0 &&
+                <>
+                <h3>Resumen</h3>
+                <h5>Subtotal</h5>
+                <p>${test.calcSubTotal()}</p>
+                <hr />
+                <h4>Total</h4>
+                <p>${test.calcTotal()}</p>
+                <button>Finalizar compra</button>
+                </>
+            }
+        </div>
         </>
     )
 
