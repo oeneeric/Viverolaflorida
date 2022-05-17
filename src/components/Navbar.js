@@ -12,8 +12,6 @@ const NavBar = () => {
                 <Nav className="me-auto">
                     <Nav.Link href="/category/Aromáticas">Aromáticas</Nav.Link>
                     <Nav.Link href="/category/Sustratos">Sustratos</Nav.Link>
-                    <Nav.Link href="/category/3">Categoría 3</Nav.Link>
-                    <Nav.Link href="/category/4">Categoría 4</Nav.Link>
                 </Nav>
                 <CartWidget />
             </Container>
