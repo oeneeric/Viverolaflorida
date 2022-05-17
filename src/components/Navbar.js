@@ -10,8 +10,8 @@ const NavBar = () => {
             <Container>
                 <Link to="/"><Navbar.Brand>Vivero la Florida</Navbar.Brand></Link>
                 <Nav className="me-auto">
-                    <Nav.Link href="/category/1">Aromáticas</Nav.Link>
-                    <Nav.Link href="/category/2">Sustratos</Nav.Link>
+                    <Nav.Link href="/category/Aromáticas">Aromáticas</Nav.Link>
+                    <Nav.Link href="/category/Sustratos">Sustratos</Nav.Link>
                     <Nav.Link href="/category/3">Categoría 3</Nav.Link>
                     <Nav.Link href="/category/4">Categoría 4</Nav.Link>
                 </Nav>

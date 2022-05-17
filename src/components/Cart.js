@@ -23,7 +23,6 @@ const Cart = () => {
                                 <img class="carrito_img" src={item.imgItem} />
                                 <h3>Producto: {item.nameItem}</h3>
                                 <p>{item.qtyItem} items</p>
-                                <p>$ {item.priceItem}</p>
                                 <p>$ {test.calcTotalPerItem(item.idItem)}</p>
                                 <button onClick={() => test.removeItem(item.idItem)}>Eliminar producto</button>
                             </div>
