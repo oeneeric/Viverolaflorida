@@ -36,4 +36,8 @@ Haciendo click en el boton "Ver Producto" de cada producto accedemos a la vista 
 
 ## Autor: Oene Eric
 
+<<<<<<< HEAD
 2022 - Curso de ReactJS en CoderHouse
+=======
+2022 - Curso de ReactJS en CoderHouse
+>>>>>>> ec07600fe6adaae24053e2a41d8853799ff7cbf2
